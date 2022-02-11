@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 RecyclerView recyclerView;
-FloatingActionButton add;
+FloatingActionButton add,mapbtn;
 MyDatabaseHelper myDB;
 ArrayList<String> id,name,desc,price;
 RVAdapter rvAdapter;
@@ -30,6 +30,7 @@ RVAdapter rvAdapter;
         setContentView(R.layout.activity_main);
         recyclerView=findViewById(R.id.list);
         add= findViewById(R.id.btnadd);
+        mapbtn=findViewById(R.id.btnmap);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +47,15 @@ RVAdapter rvAdapter;
         rvAdapter = new RVAdapter(MainActivity.this,MainActivity.this,id,name,desc,price);
         recyclerView.setAdapter(rvAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+        mapbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(MainActivity.this,LocationActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
