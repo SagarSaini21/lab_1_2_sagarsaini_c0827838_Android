@@ -1,5 +1,6 @@
 package com.example.lab_1_2_sagarsaini_c0827838_android;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -42,10 +43,20 @@ RVAdapter rvAdapter;
         desc = new ArrayList<>();
         price = new ArrayList<>();
         dispalydata();
-        rvAdapter = new RVAdapter(MainActivity.this,id,name,desc,price);
+        rvAdapter = new RVAdapter(MainActivity.this,MainActivity.this,id,name,desc,price);
         recyclerView.setAdapter(rvAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==1)
+        {
+            recreate();
+        }
+    }
+
     void dispalydata()
     {
         Cursor cursor = myDB.readdata();

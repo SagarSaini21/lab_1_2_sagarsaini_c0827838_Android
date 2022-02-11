@@ -56,7 +56,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
             Toast.makeText(context, "failed", Toast.LENGTH_SHORT).show();
         }else
         {
-            Toast.makeText(context, "success", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Data Added Successfully", Toast.LENGTH_SHORT).show();
         }
     }
     Cursor readdata()
@@ -69,5 +69,34 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     cursor = db.rawQuery(sql,null);
     }
     return cursor;
+    }
+    void updateData(String id1,String name, String desc, String price)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv= new ContentValues();
+        cv.put(NAME,name);
+        cv.put(DESCRIPTION,desc);
+        cv.put(PRICE, price);
+        long result = db.update("products",cv,"id=?",new String[]{id1});
+        if (result == -1)
+        {
+            Toast.makeText(context, "Updation Failed", Toast.LENGTH_SHORT).show();
+        }else
+        {
+            Toast.makeText(context, "Updated Successfully", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+    void ondelete(String id1)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result =db.delete(TABLE_NAME,"id=?",new String[]{id1});
+        if (result == -1)
+        {
+            Toast.makeText(context, "Deletion Failed", Toast.LENGTH_SHORT).show();
+        }else
+        {
+            Toast.makeText(context, "Deleted Successfully", Toast.LENGTH_SHORT).show();
+        }
     }
 }

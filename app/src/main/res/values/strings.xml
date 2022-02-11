@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Lab_1_2_SagarSaini_C0827838_Android</string>
+    <string name="title_activity_location">LocationActivity</string>
 </resources>

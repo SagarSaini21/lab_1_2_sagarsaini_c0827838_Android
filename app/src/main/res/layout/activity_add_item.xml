@@ -7,7 +7,7 @@
     tools:context=".AddItemActivity">
 
     <Button
-        android:id="@+id/btnAdd"
+        android:id="@+id/btnUpdate"
         android:layout_width="169dp"
         android:layout_height="48dp"
         android:layout_marginBottom="264dp"
@@ -41,7 +41,7 @@
         android:hint="Price"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnAdd"
+        app:layout_constraintBottom_toTopOf="@+id/btnUpdate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

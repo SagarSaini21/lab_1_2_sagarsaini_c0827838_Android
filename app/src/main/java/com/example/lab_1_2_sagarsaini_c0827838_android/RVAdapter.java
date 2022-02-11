@@ -1,6 +1,7 @@
 package com.example.lab_1_2_sagarsaini_c0827838_android;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -16,9 +17,12 @@ import java.util.ArrayList;
 
 public class RVAdapter extends RecyclerView.Adapter<RVAdapter.MyViewHolder> {
     Context context;
+    Activity activity;
     ArrayList<String> id,name,desc,price;
+    private MyViewHolder holder;
 
-    RVAdapter(Context context,ArrayList id,ArrayList name,ArrayList desc, ArrayList price){
+    RVAdapter(Activity activity,Context context,ArrayList id,ArrayList name,ArrayList desc, ArrayList price){
+        this.activity=activity;
     this.context=context;
     this.id=id;
     this.name=name;
@@ -49,11 +53,11 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.MyViewHolder> {
                 intent.putExtra("name",String.valueOf(name.get(position)));
                 intent.putExtra("desc",String.valueOf(desc.get(position)));
                 intent.putExtra("price",String.valueOf(price.get(position)));
-                context.startActivity(intent);
+                activity.startActivityForResult(intent,1);
             }
         });
-
     }
+
 
     @Override
     public int getItemCount() {

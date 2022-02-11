@@ -18,7 +18,7 @@ public class AddItemActivity extends AppCompatActivity {
         name=findViewById(R.id.upname);
         price=findViewById(R.id.upprice);
         desc=findViewById(R.id.updesc);
-        addItem=findViewById(R.id.btnAdd);
+        addItem=findViewById(R.id.btnUpdate);
         addItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -27,6 +27,7 @@ public class AddItemActivity extends AppCompatActivity {
                 myDB.additem(name.getText().toString().trim(),
                         desc.getText().toString().trim(),
                         price.getText().toString().trim());
+
             }
         });
     }
