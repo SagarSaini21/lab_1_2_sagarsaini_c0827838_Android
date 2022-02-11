@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Sagar Saini/AndroidStudioProjects/Lab_1_2_SagarSaini_C0827838_Android/app/src/main/res/drawable/ic_back.xml" value="0.139" />
+        <entry key="..\:/Users/Sagar Saini/AndroidStudioProjects/Lab_1_2_SagarSaini_C0827838_Android/app/src/main/res/drawable/ic_loc.xml" value="0.139" />
         <entry key="..\:/Users/Sagar Saini/AndroidStudioProjects/Lab_1_2_SagarSaini_C0827838_Android/app/src/main/res/layout/activity_add_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Sagar Saini/AndroidStudioProjects/Lab_1_2_SagarSaini_C0827838_Android/app/src/main/res/layout/activity_location.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Sagar Saini/AndroidStudioProjects/Lab_1_2_SagarSaini_C0827838_Android/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
